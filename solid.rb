@@ -73,3 +73,28 @@ class Printer2023 < Printer
     def print_statement(transaction*) # n number of transaction objects (transaction1, trasaction2, transation*n)
     end
 end
+
+# Liskov Substitution Principle
+class Response
+    def request
+    end
+
+    def response
+    end
+end
+
+class HTTPResponse < Response
+end
+
+class JSONResponse < Response
+end
+
+# app.rb
+
+def send_users(Response response): Response
+    # return 
+end
+
+json_response = JSONResponse.new
+send_users(json_response)
+
